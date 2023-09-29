@@ -63,6 +63,8 @@ static const char *termcmd[]  = { "st", NULL };
 #define TERM "st"
 /* angel's commands */
 /* gui */
+static const char *firefox[] = { "firefox", NULL };
+static const char *emacs[] = { "emacs", NULL };
 
 /* term */
 static const char *mail[] = { TERM, "-e", "aerc", NULL };
@@ -77,7 +79,9 @@ static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_p,      spawn,          {.v = passmenu } },
-	{ MODKEY,                       XK_e,      spawn,          {.v = termemacs } },
+	{ MODKEY,                       XK_w,      spawn,          {.v = firefox } },
+	{ MODKEY,                       XK_e,      spawn,          {.v = emacs } },
+	{ MODKEY|ShiftMask,             XK_e,      spawn,          {.v = termemacs } },
 	{ MODKEY,                       XK_m,      spawn,          {.v = mail } },
 	{ MODKEY,                       XK_n,      spawn,          {.v = newsboat } },
 	{ MODKEY|ShiftMask,             XK_h,      spawn,          {.v = htop } },
