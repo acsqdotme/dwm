@@ -65,6 +65,10 @@ static const char *termcmd[]  = { "st", NULL };
 /* gui */
 
 /* term */
+static const char *mail[] = { TERM, "-e", "aerc", NULL };
+static const char *htop[] = { TERM, "-e", "htop", NULL };
+static const char *newsboat[] = { TERM, "-e", "newsboat", NULL };
+static const char *termemacs[] = { TERM, "-e", "emacs", "-nw", NULL };
 
 /* scripts */
 static const char *passmenu[] = { "passmenu", NULL };
@@ -73,6 +77,10 @@ static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_p,      spawn,          {.v = passmenu } },
+	{ MODKEY,                       XK_e,      spawn,          {.v = termemacs } },
+	{ MODKEY,                       XK_m,      spawn,          {.v = mail } },
+	{ MODKEY,                       XK_n,      spawn,          {.v = newsboat } },
+	{ MODKEY|ShiftMask,             XK_h,      spawn,          {.v = htop } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
@@ -86,7 +94,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_q,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
-	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
+	{ MODKEY|ShiftMask,             XK_m,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
