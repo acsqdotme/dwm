@@ -72,7 +72,7 @@ static const char *emacs[] = { "emacs", NULL };
 /* term */
 static const char *mail[] = { TERM, "-e", "aerc", NULL };
 static const char *htop[] = { TERM, "-e", "htop", NULL };
-static const char *newsboat[] = { TERM, "-e", "newsboat", NULL };
+static const char *newsraft[] = { TERM, "-e", "newsraft", NULL };
 static const char *termemacs[] = { TERM, "-e", "emacs", "-nw", NULL };
 
 /* scripts */
@@ -86,7 +86,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_e,      spawn,          {.v = emacs } },
 	{ MODKEY|ShiftMask,             XK_e,      spawn,          {.v = termemacs } },
 	{ MODKEY,                       XK_m,      spawn,          {.v = mail } },
-	{ MODKEY,                       XK_n,      spawn,          {.v = newsboat } },
+	{ MODKEY,                       XK_n,      spawn,          {.v = newsraft } },
 	{ MODKEY|ShiftMask,             XK_h,      spawn,          {.v = htop } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
